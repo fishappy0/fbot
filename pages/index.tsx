@@ -1,12 +1,11 @@
 import { NextPage } from 'next'
 import Head from 'next/Head'
 import Image from 'next/image'
-import style from '../styles/home.module.css'
 import Link from 'next/link'
 
 const index: NextPage = () => {
     return(
-        <div className={style.container}>
+        <div className="style.container">
             <Head>
                 <title>FBot - Main</title>
                 <meta name="description" content="Discord Bot Manager"/>
@@ -16,7 +15,7 @@ const index: NextPage = () => {
             <div className='style.title_bar'>
                <a className="style.title_container" href='..'>
                    <link rel="icon" href="/favicon.ico"/>
-                   <Image src='/logo.webp' width={150} height={150}/>
+                   <Image src='/logo.webp' width={50} height={50}/>
                    <div className='style.title_text'>FBot</div>
                </a>
             </div>

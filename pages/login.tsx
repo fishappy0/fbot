@@ -1,11 +1,11 @@
 import { NextPage } from 'next'
 import Head from 'next/Head'
 import Image from 'next/image'
-import style from '../styles/home.module.css'
+
 
 const login: NextPage = () => {
     return(
-        <div className={style.container}>
+        <div className="style.container">
             <Head>
                 <title>FBot - Login</title>
                 <meta name="description" content="Discord Bot Manager"/>

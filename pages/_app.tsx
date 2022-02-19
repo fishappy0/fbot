@@ -1,8 +1,8 @@
-import '../styles/globals.css'
+import '../styles/dist/global.css'
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function fbot_app({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default fbot_app
