@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/Head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import classNames from '../utilities/util'
 
 
 const nav_items = [
@@ -11,9 +12,6 @@ const nav_items = [
     {name: 'Editor', href: '../console/editor'},
     {name: 'Settings', href: '../console/settings'}
 ]
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 
 const console_layout: NextPage = (props) => {
