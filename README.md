@@ -1,1 +1,2 @@
-FBot - Discord bot manager with docker integration
+# FBot 
+Discord bot maker and manager
