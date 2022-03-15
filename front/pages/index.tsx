@@ -2,16 +2,18 @@ import { NextPage } from 'next'
 import Head from 'next/Head'
 import Image from 'next/image'
 import Link from 'next/link'
-import classNames from '../assets/utilities/util'
+import joinClassName from '../assets/utilities/util'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 function swtich_themes(a: number){
     console.log('clicked!');
 }
 
 const intro_buttons = [
-    {name: 'Who'},
-    {name: 'What'},
-    {name: 'Why'},
+    {name: 'About'},
+    {name: 'Documentation'},
+    {name: 'Tutorial'},
+    {name: 'Blog'},
 ]
 
 const index: NextPage = () => {
@@ -20,7 +22,7 @@ const index: NextPage = () => {
             <Head>
                 <title>FBot - Main</title>
                 <meta name="description" content="Discord Bot Manager"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="icon" href="/img/icon/favicon.ico"/>
             </Head>
             
             <div className='flex flex-col'> {/*Page Flex Alignment */}    
@@ -29,7 +31,7 @@ const index: NextPage = () => {
                        <div className='flex-auto'/>
                        <a className="flex-auto content-center" href='..'>
                            <div className='text-black text-center dark:text-white py-2'>
-                              <Image className='flex-auto'  src='/logo.webp' width={55} height={55}/>
+                              <Image className='flex-auto'  src='/img/icon/logo.webp' width={55} height={55}/>
                               <div className='font-sans text-2xl font-semibold'>FBOT</div>
                             </div>
                         </a>
@@ -41,8 +43,8 @@ const index: NextPage = () => {
                             {intro_buttons.map((item) => (
                                 <a
                                     key={item.name}
-                                    className={classNames(
-                                       'text-white text-lg hover:text-indigo-400 text-white', 
+                                    className={joinClassName(
+                                       'text-white text-lg hover:text-indigo-400 text-white font-bold', 
                                        'px-3 py-2 rounded-md text-sm font-medium'
                                 )}>
                                         {item.name}
@@ -50,10 +52,10 @@ const index: NextPage = () => {
                             ))}
                         </div>
                         <div className="py-3 login-cluster flex-initial content-end">
-                          <a className="text-white text-lg hover:text-indigo-400 hove:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                          <a className="text-sky-400 bg-gray-900 text-lg hover:text-indigo-400 font-bold hove:text-white px-3 py-2 rounded-md text-sm font-medium" href="/account/register">Register</a>
                           <a className="px-2"> | </a> 
-                          <a className="text-white text-lg hover:text-indigo-400 hove:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a> 
-                          <a className="style.logo px-2">userlogoplaceholder</a> {/*Replace with dropdown style of google login box*/}
+                          <a className="text-white text-lg hover:text-indigo-400 hove:text-white font-bold px-3 py-2 rounded-md text-sm font-medium" href="/account/login">Login</a> 
+                          {/*<a className="style.logo px-2">userlogoplaceholder</a>*/}
                         </div>
                     </div> 
                 </div>
@@ -69,7 +71,7 @@ const index: NextPage = () => {
                         <div className='inline text-indigo-400 font-bold px-3'>Host</div>
                     </span>
                     <div className="py-10"></div>
-                    <button className='flex-initial bg-sky-400 rounded px-3 py-1 hover:bg-sky-600'>Register Now!</button>
+                    <a className='flex-initial font-bold bg-sky-400 rounded px-3 py-1 hover:bg-sky-600' href='/account/register'>Register Now!</a>
                 </div>
                 {/*                    
                      <div className="style.language_container">
@@ -112,4 +114,4 @@ const index: NextPage = () => {
     )
 }
 
-export default index
+export default index;
